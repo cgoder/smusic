@@ -620,15 +620,15 @@
 
             .song-list-header,
             .song-item {
-                grid-template-columns: 30px 2fr 1.5fr 35px 35px;
+                grid-template-columns: 30px 1.8fr 1.2fr 1.2fr 40px 40px;
                 padding: 8px 10px;
-                gap: 8px;
+                gap: 6px;
                 font-size: 0.8rem;
             }
 
             #stats-top-tracks .song-item,
             #stats-top-artists .song-item {
-                grid-template-columns: 30px 2fr 1.5fr 35px;
+                grid-template-columns: 30px 1.5fr 1.2fr 1fr 40px;
             }
 
             .song-list-header {
@@ -648,6 +648,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                min-width: 0; /* Allow text to truncate properly */
             }
 
             .song-item .song-title > span:first-child {
@@ -662,6 +663,7 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 font-size: 0.8rem;
+                min-width: 0; /* Allow text to truncate properly */
             }
 
             .song-item .song-title .error-msg {
@@ -671,11 +673,12 @@
 
             .action-btn {
                 font-size: 0.9rem;
-                width: 30px;
-                height: 30px;
+                width: 35px;
+                height: 35px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                flex-shrink: 0;
             }
 
             /* For very long song titles, ensure proper truncation */
@@ -689,15 +692,15 @@
             @media (max-width: 480px) {
                 .song-list-header,
                 .song-item {
-                    grid-template-columns: 25px 2fr 1.5fr 30px 30px;
+                    grid-template-columns: 25px 1.8fr 1fr 1fr 35px 35px;
                     padding: 6px 8px;
-                    gap: 6px;
+                    gap: 5px;
                     font-size: 0.75rem;
                 }
 
                 #stats-top-tracks .song-item,
                 #stats-top-artists .song-item {
-                    grid-template-columns: 25px 2fr 1.5fr 30px;
+                    grid-template-columns: 25px 1.5fr 1fr 1fr 35px;
                 }
 
                 .song-list-header {
@@ -713,11 +716,13 @@
 
                 .song-item .song-title {
                     font-size: 0.85rem;
+                    min-width: 0; /* Allow text to truncate properly */
                 }
 
                 .song-item > span:nth-child(3),
                 .song-item > span:nth-child(4) {
                     font-size: 0.75rem;
+                    min-width: 0; /* Allow text to truncate properly */
                 }
 
                 .song-item .song-title .error-msg {
@@ -727,8 +732,9 @@
 
                 .action-btn {
                     font-size: 0.8rem;
-                    width: 25px;
-                    height: 25px;
+                    width: 30px;
+                    height: 30px;
+                    flex-shrink: 0;
                 }
 
                 .page-btn {
