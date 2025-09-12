@@ -1491,8 +1491,13 @@
                 dom.lyricsView?.classList.add('active');
                 
                 // Update lyrics view with current song info
+                updateLyricsView();
+            }
+            
+            function updateLyricsView() {
+                // Update lyrics view with current song info
                 const currentSong = state.currentPlaylist[state.currentTrackIndex];
-                if (currentSong) {
+                if (currentSong && dom.lyricsView?.classList.contains('active')) {
                     dom.lyricsAlbumArt.src = currentSong.pic || 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
                     dom.lyricsSongTitle.textContent = currentSong.name || '--';
                     dom.lyricsSongArtist.textContent = currentSong.artists?.map(a => a.name).join(' / ') || '--';
@@ -1880,6 +1885,9 @@
                     addPlayHistory(song);
                     renderHistory();
                     saveStateToLocalStorage();
+                    
+                    // Update lyrics view if it's currently active
+                    updateLyricsView();
                 } catch (error) {
                     console.error("播放失败:", error.message, song);
                     const context = state.currentPlaylist === state.favourites ? 'favourites' : state.currentPlaylist === state.history ? 'history' : 'discover';
