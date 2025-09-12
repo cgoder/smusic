@@ -55,6 +55,11 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
+        /* Prevent horizontal overflow on all elements */
+        *, *::before, *::after {
+            max-width: 100%;
+        }
 
         ::-webkit-scrollbar {
             width: 8px;
@@ -77,7 +82,7 @@
             font-family: var(--font-main);
             color: var(--text-color-primary);
             background-color: var(--bg-color-dark);
-            overflow: hidden;
+            overflow-x: hidden;
             transition: background-color 0.3s;
         }
 
@@ -101,10 +106,12 @@
             grid-template-rows: 1fr auto;
             grid-template-areas: "sidebar main" "player player";
             height: 100vh;
-            width: 100vw;
+            width: 100%;
+            max-width: 100%;
             background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
             background-size: 400% 400%;
             animation: gradient-animation 15s ease infinite;
+            overflow-x: hidden;
         }
 
         .sidebar {
@@ -118,6 +125,9 @@
             transition: background-color 0.3s, border-color 0.3s;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
+            box-sizing: border-box;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         .sidebar h1 {
@@ -163,11 +173,14 @@
             background-color: var(--main-bg);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            overflow-x: hidden; /* Prevent horizontal scrollbar */
         }
 
         .search-area {
             position: relative;
             margin-bottom: 24px;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         .search-area i.fa-search {
@@ -291,6 +304,9 @@
             box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
+            box-sizing: border-box;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         .song-info-bar {
@@ -386,6 +402,8 @@
             gap: 10px;
             width: 100%;
             max-width: 500px;
+            box-sizing: border-box;
+            overflow-x: hidden;
         }
 
         .progress-bar {
@@ -394,6 +412,8 @@
             background-color: var(--hover-bg);
             border-radius: 3px;
             cursor: pointer;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         .progress {
@@ -468,11 +488,16 @@
 
         .view {
             display: none;
+            overflow: hidden;
+            max-width: 100%;
+            box-sizing: border-box;
+            width: 100%;
         }
 
         .view.active {
             display: block;
             animation: fadeIn 0.5s ease;
+            overflow: hidden;
         }
 
         @keyframes fadeIn {
@@ -567,6 +592,259 @@
             font-weight: bold;
             cursor: pointer;
             min-width: 120px;
+        }
+
+        /* Lyrics view styles */
+        .lyrics-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .lyrics-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .lyrics-header h2 {
+            flex-grow: 1;
+            text-align: center;
+            margin: 0;
+        }
+
+        .back-button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: absolute;
+            left: 0;
+            z-index: 2;
+            white-space: nowrap;
+            max-width: 120px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            box-sizing: border-box;
+        }
+
+        .lyrics-header h2 {
+            flex-grow: 1;
+            text-align: center;
+            margin: 0;
+            padding: 0 60px; /* Add padding to center the title properly */
+        }
+
+        .back-button:hover {
+            background: var(--accent-color-hover);
+        }
+
+        .lyrics-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .lyrics-album-art {
+            margin-bottom: 20px;
+            z-index: 1; /* Ensure album art is above lyrics */
+            position: relative;
+        }
+
+        .lyrics-album-art img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .song-info {
+            margin-bottom: 30px;
+            z-index: 1; /* Ensure song info is above lyrics */
+            position: relative;
+        }
+
+        .song-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .song-info p {
+            color: var(--text-color-secondary);
+            font-size: 1.1rem;
+        }
+
+        .lyrics-text-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .lyrics-text, .translated-lyrics {
+            text-align: center;
+            line-height: 2;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .lyrics-text {
+            height: 400px;
+            max-height: 50vh;
+            min-height: 300px;
+            overflow: hidden; /* Completely disable scrolling */
+            text-align: center;
+            padding: 20px 10px; /* Reduce horizontal padding */
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 0; /* Ensure lyrics are below album art and song info */
+        }
+
+        /* Medium screens */
+        @media (max-width: 1024px) {
+            .lyrics-text {
+                height: 350px;
+                max-height: 45vh;
+            }
+        }
+
+        /* Small screens */
+        @media (max-width: 768px) {
+            .lyrics-text {
+                height: 300px;
+                max-height: 40vh;
+                min-height: 250px;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .lyrics-text {
+                height: 250px;
+                max-height: 35vh;
+                min-height: 200px;
+                padding: 15px 0;
+                overflow: hidden; /* Completely disable scrolling */
+            }
+            
+            .lyrics-text-container {
+                max-width: 100%;
+            }
+            
+            .lyrics-container {
+                padding: 10px;
+            }
+            
+            .lyrics-album-art img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .song-info h3 {
+                font-size: 1.2rem;
+            }
+            
+            .song-info p {
+                font-size: 1rem;
+            }
+            
+            .back-button {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+                max-width: 80px;
+            }
+            
+            .lyrics-header h2 {
+                padding: 0 50px; /* Adjust padding for smaller screens */
+            }
+        }
+
+        .lyric-line {
+            padding: 8px 0;
+            transition: all 0.3s ease;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .lyric-line.active {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            font-weight: bold;
+            transform: scale(1.05);
+        }
+
+        .translated-lyrics {
+            color: var(--text-color-secondary);
+            font-size: 1rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        /* Mobile styles for lyrics view */
+        @media (max-width: 768px) {
+            .lyrics-container {
+                padding: 15px;
+            }
+
+            .lyrics-album-art img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .song-info h3 {
+                font-size: 1.3rem;
+            }
+
+            .lyrics-text, .translated-lyrics {
+                font-size: 1rem;
+            }
+
+            .lyrics-text {
+                height: 300px;
+                max-height: 40vh;
+                min-height: 250px;
+                padding: 20px 5px; /* Further reduce horizontal padding on mobile */
+                overflow: hidden; /* Completely disable scrolling */
+            }
+
+            .lyric-line.active {
+                font-size: 1.1rem;
+            }
+            
+            .back-button {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+                max-width: 100px;
+            }
         }
 
         /* Mobile styles */
@@ -942,6 +1220,31 @@
                     <div id="stats-top-artists" class="song-list"></div>
                 </div>
             </div>
+            
+            <!-- 歌词显示页面 -->
+            <div id="lyrics-view" class="view">
+                <div class="lyrics-container">
+                    <div class="lyrics-header">
+                        <button id="back-to-player" class="back-button">
+                            <i class="fas fa-arrow-left"></i> 返回
+                        </button>
+                        <h2>歌词</h2>
+                    </div>
+                    <div class="lyrics-content">
+                        <div class="lyrics-album-art">
+                            <img id="lyrics-album-art" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="专辑封面">
+                        </div>
+                        <div class="song-info">
+                            <h3 id="lyrics-song-title">--</h3>
+                            <p id="lyrics-song-artist">--</p>
+                        </div>
+                        <div class="lyrics-text-container">
+                            <div id="lyrics-text" class="lyrics-text"></div>
+                            <div id="translated-lyrics" class="translated-lyrics"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <footer class="now-playing-bar">
@@ -1063,6 +1366,14 @@
                 statsUniqueTracks: document.getElementById('stats-unique-tracks'),
                 statsTopTracks: document.getElementById('stats-top-tracks'),
                 statsTopArtists: document.getElementById('stats-top-artists'),
+                // Lyrics view elements
+                lyricsView: document.getElementById('lyrics-view'),
+                backToPlayerBtn: document.getElementById('back-to-player'),
+                lyricsAlbumArt: document.getElementById('lyrics-album-art'),
+                lyricsSongTitle: document.getElementById('lyrics-song-title'),
+                lyricsSongArtist: document.getElementById('lyrics-song-artist'),
+                lyricsText: document.getElementById('lyrics-text'),
+                translatedLyrics: document.getElementById('translated-lyrics'),
             };
 
             const API = {
@@ -1079,7 +1390,13 @@
                         pic: `https://picsum.photos/400/400?random=${encodeURIComponent(song.name)}`
                     }));
                 },
-                getSongUrl: (song) => `https://music-api.gdstudio.xyz/api.php?types=url&id=${song.id.split('_')[1]}&source=${song.source}&br=320000`
+                getSongUrl: (song) => `https://music-api.gdstudio.xyz/api.php?types=url&id=${song.id.split('_')[1]}&source=${song.source}&br=320000`,
+                getLyrics: async (source, lyricId) => {
+                    const url = `https://music-api.gdstudio.xyz/api.php?types=lyric&source=${source}&id=${lyricId}`;
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error('Lyrics API request failed');
+                    return await response.json();
+                }
             };
 
             const state = {
@@ -1136,6 +1453,12 @@
                         }
                     });
                 });
+                // Album art click to toggle between lyrics and player view
+                dom.barAlbumArt.addEventListener('click', toggleLyricsView);
+                // Back to player button
+                if (dom.backToPlayerBtn) {
+                    dom.backToPlayerBtn.addEventListener('click', showPlayerView);
+                }
                 dom.searchInput.addEventListener('keypress', e => { if (e.key === 'Enter' && e.target.value.trim()) fetchAndDisplaySearchResults(e.target.value.trim()); });
                 dom.loadOnlineBtn.addEventListener('click', () => fetchOnlineMusic());
                 dom.addLocalFilesBtn.addEventListener('click', () => dom.localFileInput.click());
@@ -1148,12 +1471,189 @@
                 dom.repeatBtn.addEventListener('click', toggleRepeat);
                 dom.volumeSlider.addEventListener('input', e => dom.audioPlayer.volume = e.target.value);
                 dom.progressBar.addEventListener('click', seek);
-                dom.audioPlayer.addEventListener('timeupdate', updateProgress);
+                dom.audioPlayer.addEventListener('timeupdate', () => {
+                    updateProgress();
+                    // Highlight current lyric if lyrics view is active
+                    if (dom.lyricsView?.classList.contains('active')) {
+                        highlightCurrentLyric(dom.audioPlayer.currentTime);
+                    }
+                });
                 dom.audioPlayer.addEventListener('loadedmetadata', () => dom.totalDuration.textContent = formatTime(dom.audioPlayer.duration));
                 dom.audioPlayer.addEventListener('ended', handleSongEnd);
                 dom.audioPlayer.addEventListener('play', () => updatePlayPauseIcon(true));
                 dom.audioPlayer.addEventListener('pause', () => updatePlayPauseIcon(false));
                 dom.mainContent.addEventListener('click', handleMainContentClick);
+            }
+
+            function showLyricsView() {
+                // Hide all views and show lyrics view
+                document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+                dom.lyricsView?.classList.add('active');
+                
+                // Update lyrics view with current song info
+                const currentSong = state.currentPlaylist[state.currentTrackIndex];
+                if (currentSong) {
+                    dom.lyricsAlbumArt.src = currentSong.pic || 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+                    dom.lyricsSongTitle.textContent = currentSong.name || '--';
+                    dom.lyricsSongArtist.textContent = currentSong.artists?.map(a => a.name).join(' / ') || '--';
+                    
+                    // Fetch and display lyrics
+                    fetchAndDisplayLyrics(currentSong);
+                    
+                    // Highlight current lyric if audio is playing
+                    if (dom.audioPlayer.currentTime > 0) {
+                        highlightCurrentLyric(dom.audioPlayer.currentTime);
+                    }
+                }
+            }
+
+            function showPlayerView() {
+                // Hide lyrics view and show the previously active view
+                dom.lyricsView?.classList.remove('active');
+                document.querySelector('.view:not(#lyrics-view)')?.classList.add('active');
+            }
+            
+            function toggleLyricsView() {
+                // Check if lyrics view is currently active
+                if (dom.lyricsView?.classList.contains('active')) {
+                    // If lyrics view is active, switch to player view
+                    showPlayerView();
+                } else {
+                    // If lyrics view is not active, switch to lyrics view
+                    showLyricsView();
+                }
+            }
+
+            // Store parsed lyrics for synchronization
+            let parsedLyrics = [];
+            
+            async function fetchAndDisplayLyrics(song) {
+                try {
+                    // Clear previous lyrics
+                    dom.lyricsText.textContent = '加载歌词中...';
+                    dom.translatedLyrics.textContent = '';
+                    parsedLyrics = [];
+                    
+                    // Get lyrics from API
+                    const lyricsData = await API.getLyrics(song.source || 'netease', song.lyric_id || song.id.split('_')[1]);
+                    
+                    // Parse and display lyrics
+                    if (lyricsData.lyric) {
+                        parsedLyrics = parseLyrics(lyricsData.lyric);
+                        displayLyrics(parsedLyrics);
+                    } else {
+                        dom.lyricsText.textContent = '暂无歌词';
+                    }
+                    
+                    // Display translated lyrics if available
+                    if (lyricsData.tlyric) {
+                        dom.translatedLyrics.textContent = formatLyrics(lyricsData.tlyric);
+                    }
+                } catch (error) {
+                    console.error('获取歌词失败:', error);
+                    dom.lyricsText.textContent = '歌词加载失败';
+                }
+            }
+            
+            function parseLyrics(lyricsText) {
+                const lines = lyricsText.split('\n');
+                const lyrics = [];
+                
+                for (const line of lines) {
+                    // Extract all time tags and text from lines
+                    // Handle formats like [00:12.34]Some lyrics text or [00:12.34][00:15.67]Some lyrics text
+                    const timeTagRegex = /\[(\d+):(\d+(?:\.\d+)?)\]/g;
+                    let timeMatch;
+                    const times = [];
+                    
+                    // Extract all time tags
+                    while ((timeMatch = timeTagRegex.exec(line)) !== null) {
+                        const minutes = parseInt(timeMatch[1]);
+                        const seconds = parseFloat(timeMatch[2]);
+                        const time = minutes * 60 + seconds;
+                        times.push(time);
+                    }
+                    
+                    // Extract text (everything after the last time tag)
+                    const textMatch = line.match(/\](.*)$/);
+                    if (textMatch && times.length > 0) {
+                        const text = textMatch[1].trim();
+                        if (text) { // Only add lines with actual text
+                            // Add each time tag with the same text
+                            times.forEach(time => {
+                                lyrics.push({ time, text });
+                            });
+                        }
+                    }
+                }
+                
+                // Sort by time and remove duplicates
+                lyrics.sort((a, b) => a.time - b.time);
+                return lyrics.filter((lyric, index, self) => 
+                    index === 0 || lyric.time !== self[index - 1].time || lyric.text !== self[index - 1].text
+                );
+            }
+            
+            function displayLyrics(lyrics) {
+                if (lyrics.length === 0) {
+                    dom.lyricsText.textContent = '暂无歌词';
+                    return;
+                }
+                
+                // Display lyrics without time tags
+                dom.lyricsText.innerHTML = lyrics.map((line, index) => 
+                    `<div class="lyric-line" data-time="${line.time}" data-index="${index}">${line.text}</div>`
+                ).join('');
+            }
+
+            function formatLyrics(lyrics) {
+                // Remove time tags like [00:12.34] and [offset:] tag if present
+                return lyrics.replace(/\[\d+:\d+\.\d+\]/g, '')
+                            .replace(/\[offset:.*?\]/g, '')
+                            .trim();
+            }
+            
+            function highlightCurrentLyric(currentTime) {
+                if (parsedLyrics.length === 0 || !dom.lyricsText) return;
+                
+                // Find the current lyric line
+                let currentLyricIndex = -1;
+                for (let i = 0; i < parsedLyrics.length; i++) {
+                    if (parsedLyrics[i].time <= currentTime && 
+                        (i === parsedLyrics.length - 1 || parsedLyrics[i + 1].time > currentTime)) {
+                        currentLyricIndex = i;
+                        break;
+                    }
+                }
+                
+                // Remove active class from all lines
+                const lyricLines = dom.lyricsText.querySelectorAll('.lyric-line');
+                lyricLines.forEach(line => line.classList.remove('active'));
+                
+                // Add active class to current line
+                if (currentLyricIndex >= 0 && currentLyricIndex < lyricLines.length) {
+                    const currentLine = lyricLines[currentLyricIndex];
+                    currentLine.classList.add('active');
+                    
+                    // Scroll to center the active line
+                    const container = dom.lyricsText;
+                    const containerHeight = container.clientHeight;
+                    const lineOffsetTop = currentLine.offsetTop;
+                    const lineHeight = currentLine.offsetHeight;
+                    
+                    // Calculate scroll position to center the active line
+                    const targetScrollTop = lineOffsetTop - containerHeight / 2 + lineHeight / 2;
+                    
+                    // Ensure we don't scroll beyond container bounds
+                    const maxScrollTop = container.scrollHeight - containerHeight;
+                    const safeScrollTop = Math.max(0, Math.min(targetScrollTop, maxScrollTop));
+                    
+                    // Smooth scroll to center the active line
+                    container.scrollTo({
+                        top: safeScrollTop,
+                        behavior: 'smooth'
+                    });
+                }
             }
 
             function handleMainContentClick(e) {
