@@ -1,0 +1,24 @@
+{
+  "name": "cloudflare-music-player",
+  "version": "1.0.0",
+  "description": "A music player web application deployable on Cloudflare Pages",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "music",
+    "player",
+    "cloudflare",
+    "pages",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Music Player Developer",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}

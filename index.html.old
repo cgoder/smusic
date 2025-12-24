@@ -153,7 +153,7 @@
         .main-container {
             max-width: 1600px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 30px;
             display: grid;
             grid-template-columns: 600px 450px 350px;
             gap: 25px;
@@ -165,13 +165,13 @@
         .content-section {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            padding: 15px;
+            padding: 25px;
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             min-width: 0;
             display: flex;
             flex-direction: column;
-            height: calc(100vh - 180px);
+            height: calc(100vh - 240px);
         }
 
         .section-title {
@@ -228,19 +228,19 @@
             background: linear-gradient(135deg, #ff6b6b, #ff5252);
             border: none;
             color: #fff;
-            padding: 16px 30px;
-            border-radius: 15px;
+            padding: 25px 40px;
+            border-radius: 20px;
             cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
             transition: all 0.3s ease;
-            min-height: 56px;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            min-height: 80px;
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
         }
 
         .explore-radar-btn:hover {
@@ -286,7 +286,7 @@
             background: #ff5252;
         }
 
-        /* 我的歌单列表样式 */
+        /* 已保存歌单列表样式 */
         .saved-playlists-container {
             margin-bottom: 20px;
             background: rgba(255, 255, 255, 0.03);
@@ -300,16 +300,8 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
-            padding: 8px 10px 10px 10px;
+            padding-bottom: 10px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            cursor: pointer;
-            border-radius: 8px 8px 0 0;
-            transition: all 0.3s ease;
-            user-select: none;
-        }
-
-        .saved-playlists-header:hover {
-            background: rgba(255, 255, 255, 0.05);
         }
 
         .saved-playlists-header h4 {
@@ -321,14 +313,6 @@
             gap: 8px;
         }
 
-        .saved-playlists-header #toggleIcon {
-            transition: transform 0.3s ease;
-        }
-
-        .saved-playlists-header.collapsed #toggleIcon {
-            transform: rotate(180deg);
-        }
-
         .clear-all-btn {
             background: rgba(244, 67, 54, 0.2);
             border: 1px solid rgba(244, 67, 54, 0.3);
@@ -338,8 +322,6 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 12px;
-            position: relative;
-            z-index: 10;
         }
 
         .clear-all-btn:hover {
@@ -558,32 +540,13 @@
         .player-section {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            padding: 15px;
+            padding: 25px;
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
-            height: calc(100vh - 180px);
-            overflow: hidden;
-        }
-
-        .player-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            overflow-y: auto;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
-        }
-
-        .player-content::-webkit-scrollbar {
-            width: 4px;
-        }
-
-        .player-content::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 2px;
+            justify-content: space-between;
+            height: calc(100vh - 240px);
         }
 
         .current-song {
@@ -598,8 +561,8 @@
         }
 
         .current-cover {
-            width: 160px;
-            height: 160px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
@@ -681,15 +644,15 @@
         }
 
         .control-btn.small {
-            width: 40px;
-            height: 40px;
-            font-size: 16px;
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
         }
 
         .play-btn {
-            width: 56px;
-            height: 56px;
-            font-size: 24px;
+            width: 65px;
+            height: 65px;
+            font-size: 28px;
             background: linear-gradient(135deg, #ff6b6b, #ff5252);
             box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
         }
@@ -722,7 +685,6 @@
             width: 0%;
             transition: width 0.1s ease;
             position: relative;
-            pointer-events: none; /* 防止填充条拦截点击事件 */
         }
 
         .progress-fill::after {
@@ -815,9 +777,9 @@
         }
 
         /* 下载区域 */
-        .quality-download-container {
+        .download-container {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 10px;
             margin-bottom: 20px;
         }
@@ -827,7 +789,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 10px 15px;
+            padding: 12px 15px;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
@@ -905,106 +867,16 @@
             transform: scale(1.1);
         }
 
-        /* 解析网易云歌单信息头部 */
-        .parsed-playlist-header {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .parsed-playlist-info h3 {
-            color: #fff;
-            font-size: 16px;
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
-
-        .parsed-playlist-info p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .parsed-playlist-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .action-btn-large {
-            padding: 10px 16px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            white-space: nowrap;
-        }
-
-        .action-btn-large.save-btn {
-            background: linear-gradient(135deg, #4CAF50, #45a049);
-            color: #fff;
-            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
-        }
-
-        .action-btn-large.save-btn:hover {
-            background: linear-gradient(135deg, #45a049, #3d8b40);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
-        }
-
-        .action-btn-large.clear-btn {
-            background: rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .action-btn-large.clear-btn:hover {
-            background: rgba(244, 67, 54, 0.3);
-            color: #fff;
-            border-color: rgba(244, 67, 54, 0.5);
-        }
-
-        .action-btn-large.download-all-btn {
-            background: linear-gradient(135deg, #2196F3, #1976D2);
-            color: #fff;
-            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
-        }
-
-        .action-btn-large.download-all-btn:hover {
-            background: linear-gradient(135deg, #1976D2, #1565C0);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(33, 150, 243, 0.4);
-        }
-
-        .action-btn-large.download-all-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
         /* 歌词区域 */
         .lyrics-section {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            padding: 15px;
+            padding: 25px;
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
-            height: calc(100vh - 180px);
+            height: calc(100vh - 240px);
         }
 
         .lyrics-container {
@@ -1264,7 +1136,7 @@
                 margin-bottom: 15px;
             }
             
-            .quality-download-container {
+            .download-container {
                 margin-bottom: 15px;
             }
             
@@ -1396,9 +1268,25 @@
             background: rgba(255, 255, 255, 0.5);
         }
 
+        /* 音频可视化波浪样式 */
+        .audio-visualizer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            pointer-events: none;
+            background: linear-gradient(to top, rgba(12, 12, 12, 0.8), transparent);
+            backdrop-filter: blur(5px);
+        }
+
+        #waveCanvas {
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+        }
   </style>
-    <!-- 引入JSZip库用于创建压缩包 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </head>
 <body>
     <div class="bg-animation"></div>
@@ -1411,7 +1299,7 @@
                 <i class="fas fa-music"></i>
                 <span>云音乐</span>
             </div>
-
+            
             <div class="search-container">
                 <div class="search-wrapper">
                     <input type="text" class="search-input" placeholder="搜索音乐、歌手、专辑..." id="searchInput">
@@ -1443,25 +1331,21 @@
         <!-- 搜索结果区域 -->
         <div class="content-section">
             <div class="tabs">
-                <button class="tab-btn" onclick="switchTab('search')">
+                <button class="tab-btn active" onclick="switchTab('search')">
                     <i class="fas fa-search"></i> 搜索结果
                 </button>
-                <button class="tab-btn active" onclick="switchTab('saved')">
-                    <i class="fas fa-bookmark"></i> 我的歌单
-                </button>
-                <button class="tab-btn" onclick="switchTab('parse')">
-                    <i class="fas fa-cloud-download-alt"></i> 解析网易云歌单
+                <button class="tab-btn" onclick="switchTab('playlist')">
+                    <i class="fas fa-list-music"></i> 网易云歌单
                 </button>
             </div>
 
-            <!-- 搜索结果标签页 -->
-            <div id="searchTab" class="tab-content">
+            <div id="searchTab" class="tab-content active">
                 <!-- 添加探索雷达按钮 -->
                 <button class="explore-radar-btn" onclick="exploreRadar()" id="exploreRadarBtn">
                     <i class="fas fa-satellite-dish"></i>
                     <span>探索雷达 - 发现热门音乐</span>
                 </button>
-
+                
                 <div class="search-results" id="searchResults">
                     <div class="empty-state">
                         <i class="fas fa-search"></i>
@@ -1470,75 +1354,34 @@
                 </div>
             </div>
 
-            <!-- 解析网易云歌单标签页 -->
-            <div id="parseTab" class="tab-content">
+            <div id="playlistTab" class="tab-content">
                 <div class="playlist-input-container">
                     <input type="text" id="playlistIdInput" class="playlist-input" placeholder="输入网易云歌单ID或链接...">
                     <button class="playlist-btn" onclick="parsePlaylist()">
-                        <i class="fas fa-download"></i> 解析网易云歌单
+                        <i class="fas fa-check"></i> 解析歌单
                     </button>
                 </div>
-
-                <!-- 当前解析的歌单信息 -->
-                <div id="currentParsedPlaylist" style="display: none;">
-                    <div class="parsed-playlist-header">
-                        <div class="parsed-playlist-info">
-                            <h3 id="parsedPlaylistName">歌单名称</h3>
-                            <p id="parsedPlaylistStats"><i class="fas fa-music"></i> 0首歌曲</p>
-                        </div>
-                        <div class="parsed-playlist-actions">
-                            <button class="action-btn-large download-all-btn" onclick="downloadAllSongs()" title="下载整个歌单">
-                                <i class="fas fa-download"></i> 下载全部
-                            </button>
-                            <button class="action-btn-large save-btn" onclick="saveCurrentPlaylist()" title="保存到我的歌单">
-                                <i class="fas fa-bookmark"></i> 保存歌单
-                            </button>
-                            <button class="action-btn-large clear-btn" onclick="clearParsedPlaylist()" title="清除当前解析">
-                                <i class="fas fa-times-circle"></i> 清除
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="search-results" id="parseResults">
-                    <div class="empty-state">
-                        <i class="fas fa-cloud-download-alt"></i>
-                        <div>输入网易云歌单ID或链接后点击解析按钮</div>
-                        <div style="margin-top: 10px; font-size: 12px; color: rgba(255, 255, 255, 0.5);">
-                            支持格式: 歌单ID 或完整链接
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 我的歌单标签页 -->
-            <div id="savedTab" class="tab-content active">
-                <div class="saved-playlists-container" style="margin-bottom: 15px;">
-                    <div class="saved-playlists-header" onclick="handleHeaderClick(event)">
-                        <h4 style="display: flex; align-items: center; gap: 8px; cursor: pointer; margin: 0;">
-                            <i class="fas fa-bookmark"></i>
-                            我保存的歌单
-                            <i class="fas fa-chevron-up" id="toggleIcon" style="font-size: 12px; color: rgba(255, 255, 255, 0.6);"></i>
-                        </h4>
-                        <button class="clear-all-btn" onclick="event.stopPropagation(); clearAllPlaylists();" title="清空所有歌单">
-                            <i class="fas fa-trash"></i> 清空
+                
+                <!-- 已解析的歌单列表 -->
+                <div class="saved-playlists-container">
+                    <div class="saved-playlists-header">
+                        <h4><i class="fas fa-bookmark"></i> 已保存的歌单</h4>
+                        <button class="clear-all-btn" onclick="clearAllPlaylists()" title="清空所有歌单">
+                            <i class="fas fa-trash"></i>
                         </button>
                     </div>
-                    <div class="saved-playlists-list" id="savedPlaylistsList" style="display: block;">
+                    <div class="saved-playlists-list" id="savedPlaylistsList">
                         <div class="empty-saved-state">
                             <i class="fas fa-music"></i>
                             <div>暂无保存的歌单</div>
-                            <div style="margin-top: 8px; font-size: 12px; opacity: 0.7;">
-                                在"解析网易云歌单"页面解析后保存
-                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="search-results" id="savedResults">
+                
+                <div class="search-results" id="playlistResults">
                     <div class="empty-state">
-                        <i class="fas fa-hand-pointer"></i>
-                        <div>点击上方已保存的歌单查看歌曲列表</div>
+                        <i class="fas fa-list-ol"></i>
+                        <div>输入歌单ID后点击解析，或点击上方已保存的歌单</div>
                     </div>
                 </div>
             </div>
@@ -1546,71 +1389,68 @@
 
         <!-- 播放器区域 -->
         <div class="player-section">
-            <div class="player-content">
-                <div class="current-song">
-                    <div class="current-cover-container">
-                        <img class="current-cover" id="currentCover" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIwIiBoZWlnaHQ9IjIyMCIgdmlld0JveD0iMCAwIDIyMCAyMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMjAiIGhlaWdodD0iMjIwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiIHJ4PSIyMCIvPgo8cGF0aCBkPSJNMTEwIDcwTDE0MCAxMTBIMTIwVjE1MEg5MFYxMTBINzBMMTEwIDcwWiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjMpIi8+Cjwvc3ZnPgo=" alt="专辑封面">
-                    </div>
-                    <div class="current-info">
-                        <h3 id="currentTitle">未选择歌曲</h3>
-                        <p id="currentArtist">请搜索并选择要播放的歌曲</p>
-                    </div>
+            <div class="current-song">
+                <div class="current-cover-container">
+                    <img class="current-cover" id="currentCover" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIwIiBoZWlnaHQ9IjIyMCIgdmlld0JveD0iMCAwIDIyMCAyMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMjAiIGhlaWdodD0iMjIwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiIHJ4PSIyMCIvPgo8cGF0aCBkPSJNMTEwIDcwTDE0MCAxMTBIMTIwVjE1MEg5MFYxMTBINzBMMTEwIDcwWiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjMpIi8+Cjwvc3ZnPgo=" alt="专辑封面">
                 </div>
+                <div class="current-info">
+                    <h3 id="currentTitle">未选择歌曲</h3>
+                    <p id="currentArtist">请搜索并选择要播放的歌曲</p>
+                </div>
+            </div>
 
-                <div class="player-controls">
-                    <!-- 我的喜欢按钮 - 与其他播放控制按钮保持统一样式 -->
-                    <button class="control-btn small" id="playerFavoriteBtn" onclick="toggleCurrentSongFavorite()" title="添加到我的喜欢">
-                        <i class="far fa-heart"></i>
-                    </button>
-                    <button class="control-btn small" onclick="previousSong()">
-                        <i class="fas fa-step-backward"></i>
-                    </button>
-                    <button class="control-btn play-btn" id="playBtn" onclick="togglePlay()">
-                        <i class="fas fa-play"></i>
-                    </button>
-                    <button class="control-btn small" onclick="nextSong()">
-                        <i class="fas fa-step-forward"></i>
-                    </button>
-                    <button class="control-btn small" id="playModeBtn" onclick="togglePlayMode()" title="列表循环">
-                        <i class="fas fa-repeat"></i>
-                    </button>
-                </div>
+            <div class="player-controls">
+                <button class="control-btn small" onclick="previousSong()">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="control-btn play-btn" id="playBtn" onclick="togglePlay()">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="control-btn small" onclick="nextSong()">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
 
-                <div class="progress-container">
-                    <div class="progress-bar" onclick="seekTo(event)">
-                        <div class="progress-fill" id="progressFill"></div>
-                    </div>
-                    <div class="time-info">
-                        <span id="currentTime">0:00</span>
-                        <span id="totalTime">0:00</span>
-                    </div>
+            <div class="progress-container">
+                <div class="progress-bar" onclick="seekTo(event)">
+                    <div class="progress-fill" id="progressFill"></div>
                 </div>
+                <div class="time-info">
+                    <span id="currentTime">0:00</span>
+                    <span id="totalTime">0:00</span>
+                </div>
+            </div>
 
-                <!-- 音量滑块 -->
-                <div class="volume-container">
-                    <i class="fas fa-volume-up volume-icon"></i>
-                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80" onchange="setVolume(this.value)">
+            <!-- 音质选择 -->
+            <div class="quality-container">
+                <div class="quality-label">
+                    <i class="fas fa-music"></i>
+                    <span>音质</span>
                 </div>
+                <select class="quality-select" id="qualitySelect">
+                    <option value="128">标准 128K</option>
+                    <option value="192">较高 192K</option>
+                    <option value="320" selected>高品质 320K</option>
+                    <option value="740">无损 FLAC</option>
+                    <option value="999">Hi-Res</option>
+                </select>
+            </div>
 
-                <div class="quality-download-container">
-                    <!-- 音质选择 -->
-                    <select class="quality-select" id="qualitySelect">
-                        <option value="128">标准 128K</option>
-                        <option value="192">较高 192K</option>
-                        <option value="320">高品质 320K</option>
-                        <option value="740"selected>无损 FLAC</option>
-                        <option value="999">Hi-Res</option>
-                    </select>
-                    <!-- 下载区域 -->
-                    <button class="download-btn" onclick="downloadCurrentSong()" id="downloadSongBtn" disabled>
-                        <i class="fas fa-download"></i>
-                        <span>下载音乐</span>
-                    </button>
-                    <button class="download-btn" onclick="downloadCurrentLyric()" id="downloadLyricBtn" disabled>
-                        <i class="fas fa-file-text"></i>
-                        <span>下载歌词</span>
-                    </button>
-                </div>
+            <div class="volume-container">
+                <i class="fas fa-volume-up volume-icon"></i>
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80" onchange="setVolume(this.value)">
+            </div>
+
+            <!-- 下载区域 -->
+            <div class="download-container">
+                <button class="download-btn" onclick="downloadCurrentSong()" id="downloadSongBtn" disabled>
+                    <i class="fas fa-download"></i>
+                    <span>下载音乐</span>
+                </button>
+                <button class="download-btn" onclick="downloadCurrentLyric()" id="downloadLyricBtn" disabled>
+                    <i class="fas fa-file-text"></i>
+                    <span>下载歌词</span>
+                </button>
             </div>
 
             <audio id="audioPlayer" preload="metadata"></audio>
@@ -1635,9 +1475,14 @@
         </div>
     </div>
 
+    <!-- 音频可视化波浪 -->
+    <div class="audio-visualizer">
+        <canvas id="waveCanvas"></canvas>
+    </div>
+
     <script>
         // API基础URL
-        const API_BASE = 'https:///music-api.gdstudio.xyz/api.php';
+        const API_BASE = 'https://music-api.gdstudio.xyz/api.php';
         let currentPlaylist = [];
         let currentIndex = -1;
         let currentLyrics = [];
@@ -1645,12 +1490,7 @@
         let isUserScrolling = false;
         let userScrollTimeout;
         let playlistData = [];
-
-        // 播放模式: 'order' (顺序播放), 'loop' (列表循环), 'random' (随机播放), 'single' (单曲循环)
-        let playMode = 'loop'; // 默认为列表循环
-        let playHistory = []; // 存储播放历史的索引数组，用于随机模式回退
-        let historyPosition = -1; // 当前在历史记录中的位置
-
+        
         // 存储所有歌单的数据结构
         let playlistStorage = new Map();
         let playlistCounter = 0;
@@ -1671,205 +1511,11 @@
                             playlist.updateTime = playlist.createTime || new Date().toISOString();
                         }
                     }
+                    
+                    updateSavedPlaylistsList();
                 }
-                
-                // 确保"我的喜欢"歌单存在
-                initializeFavoritesPlaylist();
-                
-                updateSavedPlaylistsList();
             } catch (error) {
-                console.error('加载我的歌单失败:', error);
-            }
-        }
-        
-        // 初始化"我的喜欢"歌单
-        function initializeFavoritesPlaylist() {
-            // 检查是否已存在"我的喜欢"歌单
-            let favoritesKey = null;
-            for (let [key, playlist] of playlistStorage.entries()) {
-                if (playlist.name === "我的喜欢") {
-                    favoritesKey = key;
-                    break;
-                }
-            }
-            
-            // 如果不存在，则创建
-            if (!favoritesKey) {
-                playlistCounter++;
-                const newKey = `playlist_${playlistCounter}`;
-                playlistStorage.set(newKey, {
-                    name: "我的喜欢",
-                    songs: [],
-                    id: "favorites",
-                    createTime: new Date().toISOString(),
-                    isFavorites: true // 标记为收藏歌单
-                });
-                savePlaylistsToStorage();
-            }
-        }
-        
-        // 获取"我的喜欢"歌单的key
-        function getFavoritesPlaylistKey() {
-            for (let [key, playlist] of playlistStorage.entries()) {
-                if (playlist.name === "我的喜欢") {
-                    return key;
-                }
-            }
-            return null;
-        }
-        
-        // 检查歌曲是否在"我的喜欢"歌单中
-        function isSongInFavorites(song) {
-            const favoritesKey = getFavoritesPlaylistKey();
-            if (!favoritesKey) return false;
-            
-            const favoritesPlaylist = playlistStorage.get(favoritesKey);
-            if (!favoritesPlaylist || !favoritesPlaylist.songs) return false;
-            
-            // 通过id和source来判断是否为同一首歌
-            return favoritesPlaylist.songs.some(favSong => 
-                favSong.id === song.id && favSong.source === song.source);
-        }
-        
-        // 切换歌曲的喜欢状态（新版本，通过歌曲对象和按钮元素直接操作）
-        function toggleFavoriteButton(song, buttonElement, playlist, index, containerId) {
-            const favoritesKey = getFavoritesPlaylistKey();
-            if (!favoritesKey) {
-                showNotification('未找到"我的喜欢"歌单', 'error');
-                return;
-            }
-            
-            const favoritesPlaylist = playlistStorage.get(favoritesKey);
-            const isCurrentlyFavorite = isSongInFavorites(song);
-            
-            if (isCurrentlyFavorite) {
-                // 从"我的喜欢"歌单中移除
-                favoritesPlaylist.songs = favoritesPlaylist.songs.filter(favSong => 
-                    !(favSong.id === song.id && favSong.source === song.source));
-                showNotification(`已从"我的喜欢"中移除: ${song.name}`, 'success');
-            } else {
-                // 添加到"我的喜欢"歌单
-                if (!isSongInFavorites(song)) {
-                    favoritesPlaylist.songs.unshift(song); // 添加到开头
-                    showNotification(`已添加到"我的喜欢": ${song.name}`, 'success');
-                }
-            }
-            
-            // 更新存储
-            playlistStorage.set(favoritesKey, favoritesPlaylist);
-            savePlaylistsToStorage();
-            
-            // 更新显示
-            updateSavedPlaylistsList();
-            
-            // 更新所有界面中该歌曲的喜欢按钮状态
-            updateAllFavoriteButtonsForSong(song);
-            
-            // 如果当前正在播放该歌曲，更新播放器区域的按钮
-            if (currentPlaylist && currentIndex >= 0 && currentPlaylist[currentIndex]) {
-                const currentSong = currentPlaylist[currentIndex];
-                if (currentSong.id === song.id && currentSong.source === song.source) {
-                    updatePlayerFavoriteButton();
-                }
-            }
-            
-            // 如果当前显示的是"我的喜欢"歌单，需要刷新显示
-            if (currentSelectedPlaylist === favoritesKey) {
-                displaySearchResults(favoritesPlaylist.songs, 'savedResults', favoritesPlaylist.songs);
-            }
-        }
-        
-        // 更新所有界面中指定歌曲的喜欢按钮状态
-        function updateAllFavoriteButtonsForSong(song) {
-            const isFavorite = isSongInFavorites(song);
-            document.querySelectorAll('.song-item').forEach(item => {
-                const songName = item.querySelector('.song-name')?.textContent;
-                const songArtist = item.querySelector('.song-artist')?.textContent;
-                
-                // 简单匹配，实际项目中可能需要更精确的匹配方式
-                if (songName === song.name) {
-                    const favoriteBtn = item.querySelector('.favorite-btn');
-                    if (favoriteBtn) {
-                        const icon = favoriteBtn.querySelector('i');
-                        if (icon) {
-                            if (isFavorite) {
-                                icon.className = 'fas fa-heart';
-                                icon.style.color = '#ff6b6b';
-                            } else {
-                                icon.className = 'far fa-heart';
-                                icon.style.color = '';
-                            }
-                        }
-                    }
-                }
-            });
-        }
-        
-        // 切换当前播放歌曲的喜欢状态
-        function toggleCurrentSongFavorite() {
-            if (currentIndex === -1 || !currentPlaylist || currentPlaylist.length === 0) {
-                showNotification('当前没有播放歌曲', 'warning');
-                return;
-            }
-            
-            const song = currentPlaylist[currentIndex];
-            const favoritesKey = getFavoritesPlaylistKey();
-            if (!favoritesKey) {
-                showNotification('未找到"我的喜欢"歌单', 'error');
-                return;
-            }
-            
-            const favoritesPlaylist = playlistStorage.get(favoritesKey);
-            const isCurrentlyFavorite = isSongInFavorites(song);
-            
-            if (isCurrentlyFavorite) {
-                // 从"我的喜欢"歌单中移除
-                favoritesPlaylist.songs = favoritesPlaylist.songs.filter(favSong => 
-                    !(favSong.id === song.id && favSong.source === song.source));
-                showNotification(`已从"我的喜欢"中移除: ${song.name}`, 'success');
-            } else {
-                // 添加到"我的喜欢"歌单
-                if (!isSongInFavorites(song)) {
-                    favoritesPlaylist.songs.unshift(song); // 添加到开头
-                    showNotification(`已添加到"我的喜欢": ${song.name}`, 'success');
-                }
-            }
-            
-            // 更新存储
-            playlistStorage.set(favoritesKey, favoritesPlaylist);
-            savePlaylistsToStorage();
-            
-            // 更新播放器区域的按钮
-            updatePlayerFavoriteButton();
-            
-            // 更新所有界面中该歌曲的喜欢按钮状态
-            updateAllFavoriteButtonsForSong(song);
-            
-            // 更新我的歌单列表
-            updateSavedPlaylistsList();
-            
-            // 如果当前显示的是"我的喜欢"歌单，需要刷新显示
-            if (currentSelectedPlaylist === favoritesKey) {
-                displaySearchResults(favoritesPlaylist.songs, 'savedResults', favoritesPlaylist.songs);
-            }
-        }
-        
-        // 更新播放器区域的喜欢按钮状态
-        function updatePlayerFavoriteButton() {
-            if (currentIndex === -1 || !currentPlaylist || currentPlaylist.length === 0) {
-                return;
-            }
-            
-            const song = currentPlaylist[currentIndex];
-            const button = document.getElementById('playerFavoriteBtn');
-            const icon = button.querySelector('i');
-            
-            if (isSongInFavorites(song)) {
-                icon.className = 'fas fa-heart';
-                icon.style.color = '#ff6b6b';
-            } else {
-                icon.className = 'far fa-heart';
-                icon.style.color = '';
+                console.error('加载已保存歌单失败:', error);
             }
         }
         
@@ -1893,6 +1539,10 @@
         const totalTimeSpan = document.getElementById('totalTime');
         const lyricsContainer = document.getElementById('lyricsContainer');
         const currentCover = document.getElementById('currentCover');
+        
+        const canvas = document.getElementById('waveCanvas');
+        const canvasCtx = canvas.getContext('2d');
+        let animationId;
 
         // 添加探索雷达功能（从 Music.html 集成）
         async function exploreRadar() {
@@ -2073,11 +1723,6 @@
                 songItem.className = 'song-item';
                 songItem.onclick = () => playSong(index, playlistForPlayback);
 
-                // 检查歌曲是否已在"我的喜欢"歌单中
-                const isFavorite = isSongInFavorites(song);
-                const favoriteIconClass = isFavorite ? 'fas fa-heart' : 'far fa-heart';
-                const favoriteIconColor = isFavorite ? 'style="color: #ff6b6b;"' : '';
-
                 songItem.innerHTML = `
                     <div class="song-index">${(index + 1).toString().padStart(2, '0')}</div>
                     <div class="song-info">
@@ -2085,69 +1730,26 @@
                         <div class="song-artist">${Array.isArray(song.artist) ? song.artist.join(' / ') : song.artist} · ${song.album}</div>
                     </div>
                     <div class="song-actions">
-                        <button class="action-btn favorite-btn" data-index="${index}" data-container="${containerId}" title="添加到我的喜欢">
-                            <i class="${favoriteIconClass}" ${favoriteIconColor}></i>
-                        </button>
-                        <button class="action-btn download-btn" data-index="${index}" title="下载音乐">
+                        <button class="action-btn" onclick="downloadSong(${index})" title="下载音乐">
                             <i class="fas fa-download"></i>
                         </button>
-                        <button class="action-btn lyric-btn" data-index="${index}" title="下载歌词">
+                        <button class="action-btn" onclick="downloadLyric(${index})" title="下载歌词">
                             <i class="fas fa-file-text"></i>
                         </button>
                     </div>
                     <div class="song-duration">--:--</div>
                 `;
 
-                // 使用事件委托方式添加按钮事件监听器
-                const favoriteBtn = songItem.querySelector('.favorite-btn');
-                const downloadBtn = songItem.querySelector('.download-btn');
-                const lyricBtn = songItem.querySelector('.lyric-btn');
-
-                // 我的喜欢按钮
-                favoriteBtn.onclick = (event) => {
-                    event.stopPropagation(); // 阻止冒泡，避免触发播放
-                    toggleFavoriteButton(song, favoriteBtn, playlistForPlayback, index, containerId);
-                };
-
-                // 下载音乐按钮
-                downloadBtn.onclick = (event) => {
-                    event.stopPropagation(); // 阻止冒泡，避免触发播放
-                    downloadSongByData(song, playlistForPlayback, index);
-                };
-
-                // 下载歌词按钮
-                lyricBtn.onclick = (event) => {
-                    event.stopPropagation(); // 阻止冒泡，避免触发播放
-                    downloadLyricByData(song, playlistForPlayback, index);
-                };
-
                 resultsContainer.appendChild(songItem);
             }
         }
 
-        async function playSong(index, playlist, fromHistory = false) {
+        async function playSong(index, playlist) {
             if (!playlist || index < 0 || index >= playlist.length) return;
             
             currentPlaylist = playlist;
             currentIndex = index;
             const song = currentPlaylist[index];
-
-            // 记录播放历史，用于随机模式下的上一曲功能
-            if (!fromHistory) {
-                // 如果当前不在历史的末尾，移除之后的所有历史
-                if (historyPosition < playHistory.length - 1) {
-                    playHistory = playHistory.slice(0, historyPosition + 1);
-                }
-                // 添加当前播放的索引到历史记录
-                playHistory.push(index);
-                historyPosition = playHistory.length - 1;
-                
-                // 限制历史记录长度为50条，避免内存占用过大
-                if (playHistory.length > 50) {
-                    playHistory.shift();
-                    historyPosition--;
-                }
-            }
 
             await updateCurrentSongInfo(song);
             updateActiveItem();
@@ -2175,10 +1777,13 @@
                             isPlaying = true;
                             updatePlayButton();
                             currentCover.classList.add('playing');
-
-                            // 更新 Media Session
-                            updateMediaSession(song);
-
+                            
+                            try {
+                                startVisualization();
+                            } catch (e) {
+                                console.error('启动音频可视化失败:', e);
+                            }
+                            
                             showNotification(`开始播放 (${getQualityText(urlData.br || quality)})`, 'success');
                     }).catch(error => {
                         console.error('播放失败:', error);
@@ -2319,292 +1924,6 @@
             }
         }
 
-        // 根据歌曲对象下载音乐（不依赖currentPlaylist）
-        async function downloadSongByData(song, playlist, index) {
-            const quality = document.getElementById('qualitySelect').value;
-            
-            try {
-                showNotification('正在获取下载链接...', 'info');
-                
-                const response = await fetch(`${API_BASE}?types=url&source=${song.source}&id=${song.id}&br=${quality}`);
-                const data = await response.json();
-                
-                if (data && data.url) {
-                    const link = document.createElement('a');
-                    link.href = data.url;
-                    link.download = `${song.name} - ${Array.isArray(song.artist) ? song.artist.join(', ') : song.artist}.mp3`;
-                    link.target = '_blank';
-                    
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    
-                    showNotification('开始下载音乐文件', 'success');
-                } else {
-                    showNotification('无法获取下载链接', 'error');
-                }
-            } catch (error) {
-                console.error('下载失败:', error);
-                if (window.location.protocol === 'file:') {
-                    showNotification('由于浏览器安全限制，无法通过文件方式访问API。请使用本地服务器方式打开页面（如 http://localhost:8000 ）', 'error');
-                } else {
-                    showNotification('下载失败，请稍后重试', 'error');
-                }
-            }
-        }
-
-        // 根据歌曲对象下载歌词（不依赖currentPlaylist）
-        async function downloadLyricByData(song, playlist, index) {
-            try {
-                showNotification('正在获取歌词...', 'info');
-                
-                const response = await fetch(`${API_BASE}?types=lyric&source=${song.source}&id=${song.lyric_id || song.id}`);
-                const data = await response.json();
-                
-                if (data && data.lyric) {
-                    let lyricContent = `歌曲：${song.name}\n`;
-                    lyricContent += `歌手：${Array.isArray(song.artist) ? song.artist.join(', ') : song.artist}\n`;
-                    lyricContent += `专辑：${song.album}\n`;
-                    lyricContent += `来源：${song.source}\n\n`;
-                    lyricContent += data.lyric;
-                    
-                    if (data.tlyric) {
-                        lyricContent += '\n\n=== 翻译歌词 ===\n\n';
-                        lyricContent += data.tlyric;
-                    }
-                    
-                    const blob = new Blob([lyricContent], { type: 'text/plain;charset=utf-8' });
-                    const url = URL.createObjectURL(blob);
-                    
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = `${song.name} - ${Array.isArray(song.artist) ? song.artist.join(', ') : song.artist}.lrc`;
-                    
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    
-                    URL.revokeObjectURL(url);
-                    showNotification('歌词下载完成', 'success');
-                } else {
-                    showNotification('该歌曲暂无歌词', 'warning');
-                }
-            } catch (error) {
-                console.error('下载歌词失败:', error);
-                if (window.location.protocol === 'file:') {
-                    showNotification('由于浏览器安全限制，无法通过文件方式访问API。请使用本地服务器方式打开页面（如 http://localhost:8000 ）', 'error');
-                } else {
-                    showNotification('下载歌词失败，请稍后重试', 'error');
-                }
-            }
-        }
-
-        // 下载整个歌单的函数
-        async function downloadAllSongs() {
-            if (!currentParsedPlaylistData) {
-                showNotification('没有可下载的歌单', 'warning');
-                return;
-            }
-
-            const songs = currentParsedPlaylistData.songs;
-            if (!songs || songs.length === 0) {
-                showNotification('歌单为空', 'warning');
-                return;
-            }
-
-            showNotification(`开始下载整个歌单，共 ${songs.length} 首歌曲...`, 'info');
-            
-            // 创建进度条元素
-            const progressContainer = document.createElement('div');
-            progressContainer.id = 'downloadProgressContainer';
-            progressContainer.style.cssText = `
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: rgba(0, 0, 0, 0.9);
-                color: white;
-                padding: 30px;
-                border-radius: 15px;
-                z-index: 2000;
-                min-width: 400px;
-                text-align: center;
-                backdrop-filter: blur(10px);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            `;
-            
-            progressContainer.innerHTML = `
-                <h3 style="margin-top: 0; color: #ff6b6b;">正在下载歌单</h3>
-                <div id="downloadStatus">正在准备下载...</div>
-                <div style="margin-top: 20px; font-size: 14px; color: #aaa;">
-                    <span id="progressText">0/${songs.length}</span>
-                </div>
-                <div style="margin-top: 15px; height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden;">
-                    <div id="progressBar" style="height: 100%; width: 0%; background: linear-gradient(90deg, #ff6b6b, #ff8a80); border-radius: 5px; transition: width 0.3s ease;"></div>
-                </div>
-                <button id="cancelDownload" style="margin-top: 20px; background: #f44336; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px;">取消下载</button>
-            `;
-            
-            document.body.appendChild(progressContainer);
-            
-            // 禁止页面其他操作
-            const overlay = document.createElement('div');
-            overlay.id = 'downloadOverlay';
-            overlay.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 1999;
-                backdrop-filter: blur(5px);
-            `;
-            document.body.appendChild(overlay);
-            
-            // 存储下载的歌曲数据
-            const downloadedSongs = [];
-            const failedSongs = [];
-            
-            // 禁用下载按钮防止重复点击
-            const downloadBtn = document.querySelector('.download-all-btn');
-            const originalText = downloadBtn.innerHTML;
-            downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 下载中...';
-            downloadBtn.disabled = true;
-            
-            // 添加取消下载功能
-            let isCancelled = false;
-            document.getElementById('cancelDownload').addEventListener('click', () => {
-                isCancelled = true;
-                progressContainer.remove();
-                overlay.remove();
-                downloadBtn.innerHTML = originalText;
-                downloadBtn.disabled = false;
-                showNotification('下载已取消', 'info');
-            });
-
-            try {
-                // 创建JSZip实例
-                const zip = new JSZip();
-                
-                // 逐个下载歌曲
-                for (let i = 0; i < songs.length; i++) {
-                    if (isCancelled) return;
-                    
-                    const song = songs[i];
-                    const quality = document.getElementById('qualitySelect').value;
-                    
-                    // 更新状态文本
-                    document.getElementById('downloadStatus').textContent = `正在下载: ${song.name}`;
-                    
-                    try {
-                        const response = await fetch(`${API_BASE}?types=url&source=${song.source}&id=${song.id}&br=${quality}`);
-                        const data = await response.json();
-                        
-                        if (data && data.url) {
-                            // 下载歌曲文件
-                            const songResponse = await fetch(data.url);
-                            const songBlob = await songResponse.blob();
-                            
-                            // 添加到ZIP文件
-                            const filename = `${song.name} - ${Array.isArray(song.artist) ? song.artist.join(', ') : song.artist}.mp3`;
-                            zip.file(filename, songBlob);
-                            
-                            // 添加到下载列表用于统计
-                            downloadedSongs.push(song.name);
-                        } else {
-                            failedSongs.push(song.name);
-                        }
-                    } catch (error) {
-                        console.error(`下载歌曲 ${song.name} 失败:`, error);
-                        failedSongs.push(song.name);
-                    }
-                    
-                    // 更新进度条
-                    const progressPercent = Math.round(((i + 1) / songs.length) * 100);
-                    document.getElementById('progressBar').style.width = `${progressPercent}%`;
-                    document.getElementById('progressText').textContent = `${i + 1}/${songs.length}`;
-                }
-
-                // 如果有失败的歌曲，显示提示
-                if (failedSongs.length > 0) {
-                    showNotification(`有 ${failedSongs.length} 首歌曲下载失败`, 'warning');
-                }
-
-                // 创建一个包含所有歌曲的文本文件作为清单
-                let playlistInfo = `歌单名称: ${currentParsedPlaylistData.name}\n`;
-                playlistInfo += `歌曲数量: ${songs.length} 首\n`;
-                playlistInfo += `成功下载: ${downloadedSongs.length} 首\n`;
-                playlistInfo += `下载失败: ${failedSongs.length} 首\n`;
-                playlistInfo += `下载时间: ${new Date().toLocaleString()}\n\n`;
-                playlistInfo += "成功下载的歌曲:\n";
-                
-                downloadedSongs.forEach((songName, index) => {
-                    playlistInfo += `${index + 1}. ${songName}\n`;
-                });
-                
-                if (failedSongs.length > 0) {
-                    playlistInfo += "\n下载失败的歌曲:\n";
-                    failedSongs.forEach((songName, index) => {
-                        playlistInfo += `${index + 1}. ${songName}\n`;
-                    });
-                }
-                
-                // 添加清单文件到ZIP
-                zip.file(`${currentParsedPlaylistData.name}_歌单清单.txt`, playlistInfo);
-
-                // 更新状态文本
-                document.getElementById('downloadStatus').textContent = '正在创建压缩包...';
-                
-                // 生成ZIP文件
-                const content = await zip.generateAsync({type: "blob"});
-                
-                // 移除进度条和遮罩
-                progressContainer.remove();
-                overlay.remove();
-                
-                // 下载ZIP文件
-                const url = URL.createObjectURL(content);
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = `${currentParsedPlaylistData.name}_歌单.zip`;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                URL.revokeObjectURL(url);
-                
-                showNotification(`歌单下载完成！成功下载 ${downloadedSongs.length} 首歌曲，已打包为ZIP文件`, 'success');
-            } catch (error) {
-                console.error('下载歌单失败:', error);
-                showNotification('下载歌单过程中出现错误: ' + error.message, 'error');
-                progressContainer.remove();
-                overlay.remove();
-            } finally {
-                // 恢复下载按钮
-                downloadBtn.innerHTML = originalText;
-                downloadBtn.disabled = false;
-            }
-        }
-
-        // 从已保存的歌单下载所有歌曲
-        async function downloadAllSongsFromSaved(playlistKey) {
-            const playlist = playlistStorage.get(playlistKey);
-            if (!playlist) {
-                showNotification('歌单不存在', 'error');
-                return;
-            }
-
-            // 设置当前解析的歌单数据以便复用下载函数
-            currentParsedPlaylistData = {
-                name: playlist.name,
-                songs: playlist.songs,
-                id: playlist.id
-            };
-
-            // 调用下载函数
-            await downloadAllSongs();
-        }
-
         document.getElementById('qualitySelect').addEventListener('change', () => {
             if (currentIndex !== -1 && audioPlayer.src) {
                 const currentTime = audioPlayer.currentTime;
@@ -2626,9 +1945,6 @@
 
             const coverUrl = await getAlbumCoverUrl(song, 500);
             currentCover.src = coverUrl;
-            
-            // 更新播放器区域的喜欢按钮状态
-            updatePlayerFavoriteButton();
         }
 
         function updateActiveItem() {
@@ -2636,39 +1952,12 @@
                 item.classList.remove('active');
             });
 
-            // 尝试从所有可能的容器中查找歌曲项
-            const containers = ['#searchResults', '#parseResults', '#savedResults'];
-            for (const containerId of containers) {
-                const activeListItems = document.querySelectorAll(`${containerId} .song-item`);
-                if (activeListItems[currentIndex]) {
-                    const activeItem = activeListItems[currentIndex];
-                    activeItem.classList.add('active');
-                    
-                    // 自动将当前播放的歌曲滚动到歌单中间位置
-                    scrollToActiveItem(activeItem, containerId);
-                    break;
-                }
+            const activeListItems = document.querySelectorAll(
+                (currentPlaylist === playlistData ? '#playlistResults' : '#searchResults') + ' .song-item'
+            );
+            if (activeListItems[currentIndex]) {
+                activeListItems[currentIndex].classList.add('active');
             }
-        }
-
-        // 将当前播放的歌曲滚动到可视区域的中间
-        function scrollToActiveItem(activeItem, containerId) {
-            const container = document.querySelector(containerId);
-            if (!container || !activeItem) return;
-
-            // 获取容器和元素的位置信息
-            const containerRect = container.getBoundingClientRect();
-            const itemRect = activeItem.getBoundingClientRect();
-            
-            // 计算需要滚动的距离：将元素定位到容器的中间位置
-            // 目标位置 = 元素当前相对于容器顶部的距离 - (容器高度的一半 - 元素高度的一半)
-            const scrollOffset = (itemRect.top - containerRect.top) + container.scrollTop - (containerRect.height / 2 - itemRect.height / 2);
-            
-            // 使用平滑滚动
-            container.scrollTo({
-                top: scrollOffset,
-                behavior: 'smooth'
-            });
         }
 
         function updatePlayButton() {
@@ -2780,51 +2069,6 @@
             }
         }
 
-        // 更新 Media Session 元数据和控制器
-        async function updateMediaSession(song) {
-            if ('mediaSession' in navigator) {
-                try {
-                    // 获取封面图
-                    const artwork = await getAlbumCoverUrl(song, 512);
-
-                    navigator.mediaSession.metadata = new MediaMetadata({
-                        title: song.name,
-                        artist: Array.isArray(song.artist) ? song.artist.join(', ') : song.artist,
-                        album: song.album,
-                        artwork: [
-                            { src: artwork, sizes: '96x96',   type: 'image/png' },
-                            { src: artwork, sizes: '128x128', type: 'image/png' },
-                            { src: artwork, sizes: '192x192', type: 'image/png' },
-                            { src: artwork, sizes: '256x256', type: 'image/png' },
-                            { src: artwork, sizes: '384x384', type: 'image/png' },
-                            { src: artwork, sizes: '512x512', type: 'image/png' }
-                        ]
-                    });
-
-                    // 设置媒体控制器动作处理程序
-                    navigator.mediaSession.setActionHandler('play', () => {
-                        audioPlayer.play();
-                    });
-
-                    navigator.mediaSession.setActionHandler('pause', () => {
-                        audioPlayer.pause();
-                    });
-
-                    navigator.mediaSession.setActionHandler('previoustrack', () => {
-                        previousSong();
-                    });
-
-                    navigator.mediaSession.setActionHandler('nexttrack', () => {
-                        nextSong();
-                    });
-
-                    console.log('Media Session 已更新');
-                } catch (error) {
-                    console.error('更新 Media Session 失败:', error);
-                }
-            }
-        }
-
         function togglePlay() {
             if (audioPlayer.src) {
                 if (isPlaying) {
@@ -2838,157 +2082,30 @@
         }
 
         function previousSong() {
-            switch (playMode) {
-                case 'single':
-                    // 单曲循环：重新播放当前歌曲
-                    if (currentIndex >= 0) {
-                        playSong(currentIndex, currentPlaylist);
-                    } else {
-                        showNotification('请先选择要播放的歌曲', 'warning');
-                    }
-                    break;
-
-                case 'random':
-                    // 修复随机播放模式下的上一曲逻辑，使用播放历史记录
-                    // 随机播放：从播放历史中返回上一首
-                    if (historyPosition > 0) {
-                        // 回退到历史记录中的上一首
-                        historyPosition--;
-                        const previousIndex = playHistory[historyPosition];
-                        currentIndex = previousIndex;
-                        playSong(previousIndex, currentPlaylist, true); // fromHistory = true
-                    } else {
-                        showNotification('没有上一曲了', 'info');
-                    }
-                    break;
-
-                case 'order':
-                    // 顺序播放：播放上一首，到第一首停止
-                    if (currentIndex > 0) {
-                        playSong(currentIndex - 1, currentPlaylist);
-                    } else {
-                        showNotification('已经是第一首歌曲', 'info');
-                    }
-                    break;
-
-                case 'loop':
-                    // 列表循环：播放上一首，如果是第一首则跳到最后一首
-                    if (currentIndex > 0) {
-                        playSong(currentIndex - 1, currentPlaylist);
-                    } else {
-                        // 跳到最后一首
-                        playSong(currentPlaylist.length - 1, currentPlaylist);
-                        showNotification('列表循环，跳到最后一首', 'info');
-                    }
-                    break;
+            if (currentIndex > 0) {
+                playSong(currentIndex - 1, currentPlaylist);
+            } else {
+                showNotification('已经是第一首歌曲', 'info');
             }
         }
 
         function nextSong() {
-            switch (playMode) {
-                case 'single':
-                    // 单曲循环：重新播放当前歌曲
-                    if (currentIndex >= 0) {
-                        playSong(currentIndex, currentPlaylist);
-                    } else {
-                        showNotification('请先选择要播放的歌曲', 'warning');
-                    }
-                    break;
-
-                case 'random':
-                    // 优化随机播放模式的下一曲逻辑，支持历史前进
-                    // 随机播放：如果在历史中回退过，则前进到历史中的下一首；否则随机选择一首新歌
-                    if (historyPosition < playHistory.length - 1) {
-                        // 如果当前位置不在历史末尾，前进到历史中的下一首
-                        historyPosition++;
-                        const nextIndex = playHistory[historyPosition];
-                        currentIndex = nextIndex;
-                        playSong(nextIndex, currentPlaylist, true); // fromHistory = true
-                    } else if (currentPlaylist.length > 1) {
-                        // 随机选择一首新歌
-                        let randomIndex;
-                        do {
-                            randomIndex = Math.floor(Math.random() * currentPlaylist.length);
-                        } while (randomIndex === currentIndex); // 避免重复播放当前歌曲
-                        playSong(randomIndex, currentPlaylist);
-                    } else if (currentPlaylist.length === 1) {
-                        playSong(0, currentPlaylist);
-                    } else {
-                        showNotification('歌单为空', 'warning');
-                    }
-                    break;
-
-                case 'order':
-                    // 顺序播放：播放到最后一首停止
-                    if (currentIndex < currentPlaylist.length - 1) {
-                        playSong(currentIndex + 1, currentPlaylist);
-                    } else {
-                        showNotification('已经是最后一首歌曲', 'info');
-                    }
-                    break;
-
-                case 'loop':
-                    // 列表循环：播放到最后一首后回到第一首
-                    if (currentIndex < currentPlaylist.length - 1) {
-                        playSong(currentIndex + 1, currentPlaylist);
-                    } else {
-                        // 回到第一首
-                        playSong(0, currentPlaylist);
-                        showNotification('列表循环，重新开始', 'info');
-                    }
-                    break;
-            }
-        }
-
-        // 切换播放模式 (循环切换: 列表循环 → 顺序播放 → 随机播放 → 单曲循环)
-        function togglePlayMode() {
-            const playModeBtn = document.getElementById('playModeBtn');
-            const icon = playModeBtn.querySelector('i');
-
-            switch (playMode) {
-                case 'loop':
-                    playMode = 'order';
-                    icon.className = 'fas fa-bars';
-                    playModeBtn.title = '顺序播放';
-                    showNotification('顺序播放：播放到最后一首停止', 'info');
-                    break;
-                case 'order':
-                    playMode = 'random';
-                    icon.className = 'fas fa-random';
-                    playModeBtn.title = '随机播放';
-                    showNotification('随机播放：随机选择歌曲播放', 'info');
-                    break;
-                case 'random':
-                    playMode = 'single';
-                    icon.className = 'fas fa-redo';
-                    playModeBtn.title = '单曲循环';
-                    showNotification('单曲循环：重复播放当前歌曲', 'info');
-                    break;
-                case 'single':
-                    playMode = 'loop';
-                    icon.className = 'fas fa-repeat';
-                    playModeBtn.title = '列表循环';
-                    showNotification('列表循环：播放完列表后重新开始', 'info');
-                    break;
+            if (currentIndex < currentPlaylist.length - 1) {
+                playSong(currentIndex + 1, currentPlaylist);
+            } else {
+                showNotification('已经是最后一首歌曲', 'info');
             }
         }
 
         function seekTo(event) {
             // 阻止事件冒泡，防止触发页面切换
             event.stopPropagation();
-
+            
             if (audioPlayer.duration && isFinite(audioPlayer.duration)) {
-                // 使用 currentTarget 而不是 target，确保获取的是绑定事件的元素（progress-bar），而不是被点击的子元素
-                const progressBar = event.currentTarget;
-                const rect = progressBar.getBoundingClientRect();
-
+                const rect = event.target.getBoundingClientRect();
                 // 支持触摸事件
                 const clientX = event.touches ? event.touches[0].clientX : event.clientX;
-
-                // 计算点击位置相对于进度条的百分比
                 const percent = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
-
-                // 设置播放位置
                 audioPlayer.currentTime = percent * audioPlayer.duration;
             }
         }
@@ -3070,19 +2187,6 @@
         audioPlayer.addEventListener('loadedmetadata', () => {
             if (audioPlayer.duration && isFinite(audioPlayer.duration)) {
             totalTimeSpan.textContent = formatTime(audioPlayer.duration);
-
-            // 更新 Media Session 位置状态
-            if ('mediaSession' in navigator && 'setPositionState' in navigator.mediaSession) {
-                try {
-                    navigator.mediaSession.setPositionState({
-                        duration: audioPlayer.duration,
-                        playbackRate: audioPlayer.playbackRate,
-                        position: audioPlayer.currentTime
-                    });
-                } catch (error) {
-                    console.error('设置 Media Session 位置状态失败:', error);
-                }
-            }
             } else {
                 totalTimeSpan.textContent = '--:--';
             }
@@ -3109,15 +2213,16 @@
             isPlaying = true;
             updatePlayButton();
             currentCover.classList.add('playing');
-
-            // 更新 Media Session 播放状态
-            if ('mediaSession' in navigator) {
-                navigator.mediaSession.playbackState = 'playing';
-            }
-
+            
             // 移动端在播放开始时自动切换到播放页面
             if (window.innerWidth <= 768) {
                 switchMobilePage(1);
+            }
+            
+            try {
+            startVisualization();
+            } catch (e) {
+                console.error('启动音频可视化失败:', e);
             }
         });
 
@@ -3125,10 +2230,11 @@
             isPlaying = false;
             updatePlayButton();
             currentCover.classList.remove('playing');
-
-            // 更新 Media Session 播放状态
-            if ('mediaSession' in navigator) {
-                navigator.mediaSession.playbackState = 'paused';
+            
+            try {
+            stopVisualization();
+            } catch (e) {
+                console.error('停止音频可视化失败:', e);
             }
         });
 
@@ -3159,6 +2265,105 @@
             }, 2000);
         });
 
+        function initAudioVisualizer() {
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+        }
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = 100;
+        }
+
+        function connectAudioSource() {
+            return;
+        }
+        
+        function drawWave() {
+            try {
+                animationId = requestAnimationFrame(drawWave);
+                
+                canvasCtx.fillStyle = 'rgba(12, 12, 12, 0.2)';
+                canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                const gradient = canvasCtx.createLinearGradient(0, 0, canvas.width, 0);
+                gradient.addColorStop(0, '#ff6b6b');
+                gradient.addColorStop(0.5, '#ff8a80');
+                gradient.addColorStop(1, '#ff6b6b');
+                
+                canvasCtx.lineWidth = 3;
+                canvasCtx.strokeStyle = gradient;
+                canvasCtx.beginPath();
+                
+                const time = Date.now() * 0.002;
+                const amplitude = isPlaying ? 30 + Math.random() * 20 : 5;
+                const frequency = 0.02;
+                const points = 100;
+                
+                for (let i = 0; i <= points; i++) {
+                    const x = (i / points) * canvas.width;
+                    const noise = isPlaying ? Math.random() * 10 : 0;
+                    const y = canvas.height / 2 + Math.sin(i * frequency + time) * amplitude + noise;
+                    
+                    if (i === 0) {
+                        canvasCtx.moveTo(x, y);
+                    } else {
+                        canvasCtx.lineTo(x, y);
+                    }
+                }
+                
+                canvasCtx.stroke();
+                
+                canvasCtx.beginPath();
+                canvasCtx.strokeStyle = 'rgba(255, 107, 107, 0.3)';
+                
+                for (let i = 0; i <= points; i++) {
+                    const x = (i / points) * canvas.width;
+                    const noise = isPlaying ? Math.random() * 10 : 0;
+                    const y = canvas.height / 2 - Math.sin(i * frequency + time) * amplitude - noise;
+                    
+                    if (i === 0) {
+                        canvasCtx.moveTo(x, y);
+                    } else {
+                        canvasCtx.lineTo(x, y);
+                    }
+                }
+                
+                canvasCtx.stroke();
+            } catch (e) {
+                console.error('绘制波浪失败:', e);
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                    animationId = null;
+                }
+            }
+        }
+
+        function startVisualization() {
+            try {
+                if (!animationId) {
+                    drawWave();
+            }
+            } catch (e) {
+                console.error('启动可视化失败:', e);
+            }
+        }
+
+        function stopVisualization() {
+            try {
+            if (animationId) {
+                cancelAnimationFrame(animationId);
+                animationId = null;
+                }
+                
+                if (canvasCtx) {
+                    canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            } catch (e) {
+                console.error('停止可视化失败:', e);
+            }
+        }
+
         function switchTab(tabName) {
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
@@ -3182,9 +2387,6 @@
             }
         }
 
-        // 存储当前解析的歌单临时数据
-        let currentParsedPlaylistData = null;
-
         async function parsePlaylist() {
             const input = document.getElementById('playlistIdInput').value.trim();
             if (!input) {
@@ -3192,9 +2394,9 @@
                 return;
             }
 
-            // 修复:正确提取歌单ID
+            // 修复：正确提取歌单ID
             let playlistId = input;
-
+            
             // 处理各种网易云歌单链接格式
             if (input.includes('music.163.com')) {
                 // 匹配 id= 参数
@@ -3209,12 +2411,28 @@
                     }
                 }
             }
-
+            
             // 确保只包含数字
             playlistId = playlistId.replace(/[^0-9]/g, '');
-
+            
             if (!playlistId) {
                 showNotification('无法从输入中提取有效的歌单ID', 'error');
+                return;
+            }
+            
+            // 检查是否已经解析过这个歌单
+            let existingPlaylistKey = null;
+            for (let [key, playlist] of playlistStorage.entries()) {
+                if (playlist.id === playlistId) {
+                    existingPlaylistKey = key;
+                    break;
+                }
+            }
+            
+            // 如果歌单已存在，执行刷新逻辑
+            if (existingPlaylistKey) {
+                showNotification('检测到相同歌单，正在刷新...', 'info');
+                refreshPlaylistById(existingPlaylistKey, playlistId);
                 return;
             }
 
@@ -3223,11 +2441,11 @@
                 switchMobilePage(0);
             }
 
-            const resultsContainer = document.getElementById('parseResults');
+            const resultsContainer = document.getElementById('playlistResults');
             resultsContainer.innerHTML = `
                 <div class="loading">
                     <i class="fas fa-spinner"></i>
-                    <div>正在解析网易云歌单 ID: ${playlistId}...</div>
+                    <div>正在解析歌单 ID: ${playlistId}...</div>
                 </div>
             `;
 
@@ -3237,7 +2455,7 @@
 
                 let songs = [];
                 let playlistName = '未知歌单';
-
+                
                 if (data && data.playlist && data.playlist.tracks) {
                     songs = data.playlist.tracks.map(track => ({
                         name: track.name,
@@ -3263,35 +2481,38 @@
                 }
 
                 if (songs.length > 0) {
-                    // 保存到临时变量,不自动保存
-                    currentParsedPlaylistData = {
+                    // 保存歌单到本地存储
+                    playlistCounter++;
+                    const playlistKey = `playlist_${playlistCounter}`;
+                    
+                    playlistStorage.set(playlistKey, {
                         name: playlistName,
                         songs: songs,
-                        id: playlistId
-                    };
-
-                    // 显示歌单信息头部
-                    document.getElementById('currentParsedPlaylist').style.display = 'block';
-                    document.getElementById('parsedPlaylistName').textContent = playlistName;
-                    document.getElementById('parsedPlaylistStats').innerHTML = `<i class="fas fa-music"></i> ${songs.length}首歌曲`;
-
+                        id: playlistId,
+                        createTime: new Date().toISOString()
+                    });
+                    
+                    savePlaylistsToStorage();
+                    updateSavedPlaylistsList();
+                    
                     // 显示歌曲列表
-                    displaySearchResults(songs, 'parseResults', songs);
-
-                    showNotification(`成功解析网易云歌单，共 ${songs.length} 首歌曲`, 'success');
-
+                    displaySearchResults(songs, 'playlistResults', songs);
+                    currentSelectedPlaylist = playlistKey;
+                    
+                    showNotification(`成功解析并保存 ${songs.length} 首歌曲`, 'success');
+                    
                     // 清空输入框以便解析下一个歌单
                     document.getElementById('playlistIdInput').value = '';
                 } else {
                     resultsContainer.innerHTML = `
                         <div class="error">
                             <i class="fas fa-exclamation-triangle"></i>
-                            <div>解析网易云歌单失败，请检查ID是否正确或API是否正常</div>
+                            <div>解析歌单失败，请检查ID是否正确或API是否正常</div>
                         </div>
                     `;
                 }
             } catch (error) {
-                console.error('解析网易云歌单失败:', error);
+                console.error('解析歌单失败:', error);
                 // 修复：添加更详细的错误处理，区分网络错误和文件访问限制
                 if (window.location.protocol === 'file:') {
                     resultsContainer.innerHTML = `
@@ -3310,62 +2531,8 @@
                 }
             }
         }
-
-        // 保存当前解析的歌单
-        function saveCurrentPlaylist() {
-            if (!currentParsedPlaylistData) {
-                showNotification('没有可保存的歌单', 'warning');
-                return;
-            }
-
-            // 检查是否已经保存过
-            let existingPlaylistKey = null;
-            for (let [key, playlist] of playlistStorage.entries()) {
-                if (playlist.id === currentParsedPlaylistData.id) {
-                    existingPlaylistKey = key;
-                    break;
-                }
-            }
-
-            if (existingPlaylistKey) {
-                showNotification('该歌单已存在', 'info');
-                return;
-            }
-
-            // 保存到本地存储
-            playlistCounter++;
-            const playlistKey = `playlist_${playlistCounter}`;
-
-            playlistStorage.set(playlistKey, {
-                name: currentParsedPlaylistData.name,
-                songs: currentParsedPlaylistData.songs,
-                id: currentParsedPlaylistData.id,
-                createTime: new Date().toISOString()
-            });
-
-            savePlaylistsToStorage();
-            updateSavedPlaylistsList();
-
-            showNotification(`歌单"${currentParsedPlaylistData.name}"已保存`, 'success');
-        }
-
-        // 清除当前解析的歌单
-        function clearParsedPlaylist() {
-            currentParsedPlaylistData = null;
-            document.getElementById('currentParsedPlaylist').style.display = 'none';
-            document.getElementById('parseResults').innerHTML = `
-                <div class="empty-state">
-                    <i class="fas fa-cloud-download-alt"></i>
-                    <div>输入网易云歌单ID或链接后点击解析按钮</div>
-                    <div style="margin-top: 10px; font-size: 12px; color: rgba(255, 255, 255, 0.5);">
-                        支持格式: 歌单ID 或完整链接
-                    </div>
-                </div>
-            `;
-            showNotification('已清除解析内容', 'info');
-        }
         
-        // 更新我的歌单列表显示
+        // 更新已保存歌单列表显示
         function updateSavedPlaylistsList() {
             const container = document.getElementById('savedPlaylistsList');
             if (playlistStorage.size === 0) {
@@ -3391,35 +2558,6 @@
                 const updateDate = playlist.updateTime ? new Date(playlist.updateTime).toLocaleDateString() : createDate;
                 const displayDate = playlist.updateTime ? `更新: ${updateDate}` : `创建: ${createDate}`;
                 
-                // 检查是否为"我的喜欢"歌单，如果是则不显示刷新按钮
-                const isFavorites = playlist.name === "我的喜欢";
-                
-                let actionsHTML = '';
-                if (isFavorites) {
-                    // "我的喜欢"歌单不显示刷新按钮
-                    actionsHTML = `
-                        <button class="playlist-action-btn" onclick="downloadAllSongsFromSaved('${key}')" title="下载整个歌单">
-                            <i class="fas fa-download"></i>
-                        </button>
-                        <button class="playlist-action-btn delete" onclick="deletePlaylist('${key}')" title="删除歌单">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    `;
-                } else {
-                    // 其他歌单显示所有按钮
-                    actionsHTML = `
-                        <button class="playlist-action-btn" onclick="downloadAllSongsFromSaved('${key}')" title="下载整个歌单">
-                            <i class="fas fa-download"></i>
-                        </button>
-                        <button class="playlist-action-btn" onclick="refreshPlaylist('${key}')" title="刷新歌单">
-                            <i class="fas fa-sync-alt"></i>
-                        </button>
-                        <button class="playlist-action-btn delete" onclick="deletePlaylist('${key}')" title="删除歌单">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    `;
-                }
-                
                 playlistItem.innerHTML = `
                     <div class="playlist-item-info" onclick="selectPlaylist('${key}')">
                         <div class="playlist-item-name">${playlist.name}</div>
@@ -3429,7 +2567,12 @@
                         </div>
                     </div>
                     <div class="playlist-item-actions">
-                        ${actionsHTML}
+                        <button class="playlist-action-btn" onclick="refreshPlaylist('${key}')" title="刷新歌单">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <button class="playlist-action-btn delete" onclick="deletePlaylist('${key}')" title="删除歌单">
+                            <i class="fas fa-trash"></i>
+                        </button>
                     </div>
                 `;
                 
@@ -3441,11 +2584,11 @@
         function selectPlaylist(playlistKey) {
             const playlist = playlistStorage.get(playlistKey);
             if (!playlist) return;
-
+            
             currentSelectedPlaylist = playlistKey;
-            displaySearchResults(playlist.songs, 'savedResults', playlist.songs);
+            displaySearchResults(playlist.songs, 'playlistResults', playlist.songs);
             updateSavedPlaylistsList();
-
+            
             showNotification(`已加载歌单: ${playlist.name}`, 'info');
         }
         
@@ -3453,23 +2596,23 @@
         function deletePlaylist(playlistKey) {
             const playlist = playlistStorage.get(playlistKey);
             if (!playlist) return;
-
+            
             if (confirm(`确定要删除歌单 "${playlist.name}" 吗？`)) {
                 playlistStorage.delete(playlistKey);
                 savePlaylistsToStorage();
                 updateSavedPlaylistsList();
-
+                
                 // 如果删除的是当前选中的歌单，清空显示
                 if (currentSelectedPlaylist === playlistKey) {
                     currentSelectedPlaylist = null;
-                    document.getElementById('savedResults').innerHTML = `
+                    document.getElementById('playlistResults').innerHTML = `
                         <div class="empty-state">
-                            <i class="fas fa-hand-pointer"></i>
-                            <div>点击上方已保存的歌单查看歌曲列表</div>
+                            <i class="fas fa-list-ol"></i>
+                            <div>输入歌单ID后点击解析，或点击上方已保存的歌单</div>
                         </div>
                     `;
                 }
-
+                
                 showNotification(`已删除歌单: ${playlist.name}`, 'success');
             }
         }
@@ -3486,22 +2629,22 @@
         async function refreshPlaylistById(playlistKey, playlistId) {
             const playlist = playlistStorage.get(playlistKey);
             if (!playlist) return;
-
-            const resultsContainer = document.getElementById('savedResults');
+            
+            const resultsContainer = document.getElementById('playlistResults');
             resultsContainer.innerHTML = `
                 <div class="loading">
                     <i class="fas fa-spinner"></i>
                     <div>正在刷新歌单: ${playlist.name}...</div>
                 </div>
             `;
-
+            
             try {
                 const response = await fetch(`${API_BASE}?types=playlist&id=${playlistId}&source=netease`);
                 const data = await response.json();
-
+                
                 let songs = [];
                 let playlistName = playlist.name;
-
+                
                 if (data && data.playlist && data.playlist.tracks) {
                     songs = data.playlist.tracks.map(track => ({
                         name: track.name,
@@ -3525,7 +2668,7 @@
                     }));
                     playlistName = data.name || playlistName;
                 }
-
+                
                 if (songs.length > 0) {
                     // 更新歌单数据
                     playlistStorage.set(playlistKey, {
@@ -3535,15 +2678,15 @@
                         createTime: playlist.createTime, // 保留创建时间
                         updateTime: new Date().toISOString() // 添加更新时间
                     });
-
+                    
                     savePlaylistsToStorage();
                     updateSavedPlaylistsList();
-
+                    
                     // 如果是当前选中的歌单，更新显示
                     if (currentSelectedPlaylist === playlistKey) {
-                        displaySearchResults(songs, 'savedResults', songs);
+                        displaySearchResults(songs, 'playlistResults', songs);
                     }
-
+                    
                     showNotification(`歌单刷新成功，共 ${songs.length} 首歌曲`, 'success');
                 } else {
                     resultsContainer.innerHTML = `
@@ -3582,27 +2725,28 @@
                 showNotification('没有可清空的歌单', 'info');
                 return;
             }
-
+            
             if (confirm(`确定要清空所有 ${playlistStorage.size} 个已保存的歌单吗？`)) {
                 playlistStorage.clear();
                 playlistCounter = 0;
                 currentSelectedPlaylist = null;
                 savePlaylistsToStorage();
                 updateSavedPlaylistsList();
-
-                document.getElementById('savedResults').innerHTML = `
+                
+                document.getElementById('playlistResults').innerHTML = `
                     <div class="empty-state">
-                        <i class="fas fa-hand-pointer"></i>
-                        <div>点击上方已保存的歌单查看歌曲列表</div>
+                        <i class="fas fa-list-ol"></i>
+                        <div>输入歌单ID后点击解析，或点击上方已保存的歌单</div>
                     </div>
                 `;
-
+                
                 showNotification('已清空所有歌单', 'success');
             }
         }
 
         setVolume(80);
-
+        initAudioVisualizer();
+        
         // 初始化时加载已保存的歌单
         loadSavedPlaylists();
         
@@ -3648,38 +2792,11 @@
             currentMobilePage = pageIndex;
         }
         
-        // 处理标题点击事件
-        function handleHeaderClick(event) {
-            // 阻止点击清空按钮时触发折叠
-            if (event.target.closest('.clear-all-btn')) {
-                return;
-            }
-
-            togglePlaylistList();
-        }
-
-        // 折叠/展开歌单列表
-        function togglePlaylistList() {
-            const playlistList = document.getElementById('savedPlaylistsList');
-            const header = document.querySelector('.saved-playlists-header');
-            const toggleIcon = document.getElementById('toggleIcon');
-
-            if (playlistList.style.display === 'none') {
-                playlistList.style.display = 'block';
-                toggleIcon.className = 'fas fa-chevron-up';
-                header.classList.remove('collapsed');
-            } else {
-                playlistList.style.display = 'none';
-                toggleIcon.className = 'fas fa-chevron-down';
-                header.classList.add('collapsed');
-            }
-        }
-
         let startY = 0;
         let currentY = 0;
         let isHorizontalSwipe = false;
         let swipeDirection = null;
-
+        
         function handleTouchStart(e) {
             if (window.innerWidth > 768) return;
             
